@@ -24,6 +24,7 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
     "husky": "^7.0.0",
+    "lint-staged": "^10.5.4",
     "prettier": "2.0.2"
   },
   "dependencies": {
@@ -41,6 +42,7 @@
     "start": "babel-node src/index.js",
     "seed": "babel-node src/redis/seed.js",
     "test": "mocha --require @babel/register src/test/test.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pre-commit-lint": "yarn lint-staged"
   }
 }
