@@ -1,36 +1,46 @@
 {
-    "name": "anagram-assignment",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "author": "Roxana Mafteiu-Scai",
-    "license": "ISC",
-    "module": "commonjs",
-    "devDependencies": {
-      "babel-eslint": "^10.0.3",
-      "mocha": "9.1.1",
-      "chai": "4.3.4",
-      "eslint": "6.1.0",
-      "eslint-config-airbnb": "18.0.1",
-      "eslint-plugin-import": "^2.18.2",
-      "eslint-plugin-jsx-a11y": "^6.2.3",
-      "eslint-plugin-react": "^7.14.3",
-      "eslint-plugin-react-hooks": "^1.7.0",
-      "lodash": "4.17.21"
-    },
-    "dependencies": {
-      "@babel/core": "^7.7.0",
-      "@babel/node": "^7.7.0",
-      "@babel/preset-env": "^7.7.0",
-      "@babel/preset-react": "^7.7.0",
-      "@babel/register": "^7.7.0",
-      "event-stream": "4.0.1",
-      "input": "^1.0.1",
-      "redis": "^2.8.0"
-    },
-    "scripts": {
-      "start": "babel-node src/index.js",
-      "seed": "babel-node src/redis/seed.js",
-      "test": "mocha --require @babel/register src/test/test.js"
-    }
+  "name": "anagram-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Roxana Mafteiu-Scai",
+  "license": "ISC",
+  "module": "commonjs",
+  "devDependencies": {
+    "@babel/core": "^7.7.0",
+    "@babel/node": "^7.7.0",
+    "@babel/preset-env": "^7.7.0",
+    "@babel/preset-react": "^7.7.0",
+    "@babel/register": "^7.7.0",
+    "@commitlint/cli": "^13.2.0",
+    "@commitlint/config-conventional": "^13.2.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "husky": "^7.0.0",
+    "prettier": "2.0.2"
+  },
+  "dependencies": {
+    "chai": "4.3.4",
+    "event-stream": "4.0.1",
+    "input": "^1.0.1",
+    "lodash": "4.17.21",
+    "mocha": "9.1.1",
+    "redis": "^2.8.0"
+  },
+  "scripts": {
+    "lint": "eslint --fix 'src/**/*.{js,json}'",
+    "lint:no-fix": "eslint 'src/**/*.{js,json}'",
+    "prettier": "prettier --write 'src/**/*.{js,json,md,yml}'",
+    "start": "babel-node src/index.js",
+    "seed": "babel-node src/redis/seed.js",
+    "test": "mocha --require @babel/register src/test/test.js",
+    "prepare": "husky install"
   }
+}
