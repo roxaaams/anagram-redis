@@ -2,20 +2,15 @@
 /* eslint-disable no-console */
 /* eslint-disable no-await-in-loop */
 import input from 'input';
-import { getKey} from './redis/client';
+import { getKey } from './redis/client';
 
 (async () => {
   while (true) {
-    const selection = await input.select(
-      'Menu: ',
-      ['search', 'exit'],
-    );
+    const selection = await input.select('Menu: ', ['search', 'exit']);
     if (selection === 'exit') {
       process.exit(0);
     }
-    const line = await input.text(
-      `${selection[0].toUpperCase()}${selection.substr(1)} :`,
-    );
+    const line = await input.text(`${selection[0].toUpperCase()}${selection.substr(1)} :`);
     switch (selection) {
       case 'search':
         getKey(line).then((result) => {

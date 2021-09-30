@@ -15,9 +15,9 @@ const lrange = promisify(client.lrange).bind(client);
 export const setKey = async (line) => {
   const key = sortString(line);
   await rpush(key, line);
-}
+};
 
-export const getKey =  (line) => {
+export const getKey = (line) => {
   const key = sortString(line);
   return lrange(key, 0, -1);
-}
+};

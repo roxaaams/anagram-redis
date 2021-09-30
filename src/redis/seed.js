@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-underscore-dangle */
 
-import { createReadStream }from 'fs';
+import { createReadStream } from 'fs';
 import { createInterface } from 'readline';
 import { once } from 'events';
 import path from 'path';
@@ -9,15 +9,11 @@ import { setKey } from './client';
 
 (async () => {
   try {
-    const targetPath = path.resolve(
-      __dirname,
-      '../../',
-      'data/wordlist.txt',
-    );
+    const targetPath = path.resolve(__dirname, '../../', 'data/wordlist.txt');
 
     const rl = createInterface({
       input: createReadStream(targetPath),
-      crlfDelay: Infinity
+      crlfDelay: Infinity,
     });
 
     rl.on('line', (line) => setKey(line));
@@ -28,5 +24,4 @@ import { setKey } from './client';
   } catch (err) {
     console.error(err);
   }
-
- })().then(() => process.exit(0));
+})().then(() => process.exit(0));
