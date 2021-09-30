@@ -1,0 +1,40 @@
+version: "3"
+services:
+  db: 
+    image: redis
+    ports: 
+      - 6379:6379
+    restart: 'always'
+  seed:
+    build: .
+    depends_on: 
+        - db
+    volumes: 
+      - .:/app
+    command: yarn seed
+    environment: 
+      REDIS_URL: db
+      REDIS_PORT: 6379
+  test:
+    build: .
+    depends_on: 
+        - db
+    volumes: 
+      - .:/app
+    command: yarn test
+    environment: 
+      REDIS_URL: db
+      REDIS_PORT: 6379
+  app:
+    build: .
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+    stdin_open: true
+    tty: true
+    environment:
+      REDIS_URL: db
+      REDIS_PORT: 6379
+      NODE_ENV: production
+  
