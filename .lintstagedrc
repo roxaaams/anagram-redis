@@ -1,8 +1,8 @@
 {
-  "src/**/*.+(js|json)": [
+  "src/**/*.+(js,jsx,json)": [
     "lint"
   ],
-   "src/**/*.{js,json,md}": [
+   "src/**/*.{js,jsx,json,md}": [
     "prettier --write"
   ]
 }

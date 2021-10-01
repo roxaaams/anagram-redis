@@ -26,21 +26,27 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "husky": "^7.0.0",
     "lint-staged": "^10.5.4",
-    "prettier": "2.0.2"
+    "prettier": "2.0.2",
+    "react": "17.0.2"
   },
   "dependencies": {
     "chai": "4.3.4",
     "event-stream": "4.0.1",
+    "ink": "^2.5.0",
+    "ink-select-input": "^3.1.2",
+    "ink-spinner": "^3.0.1",
+    "ink-text-input": "^3.2.1",
     "input": "^1.0.1",
     "lodash": "4.17.21",
     "mocha": "9.1.1",
     "redis": "^2.8.0"
   },
   "scripts": {
-    "lint": "eslint --fix 'src/**/*.{js,json}'",
-    "lint:no-fix": "eslint 'src/**/*.{js,json}'",
-    "prettier": "prettier --write 'src/**/*.{js,json,md,yml}'",
-    "start": "babel-node src/index.js",
+    "lint": "eslint --fix 'src/**/*.{js,jsx,json}'",
+    "lint:no-fix": "eslint 'src/**/*.{js,jsx,json}'",
+    "prettier": "prettier --write 'src/**/*.{js,jsx,json,md,yml}'",
+    "start": "babel-node src/index.jsx",
+    "start:vanilla": "babel-node src/vanilla.js",
     "seed": "babel-node src/redis/seed.js",
     "test": "mocha --require @babel/register src/test/test.js",
     "prepare": "husky install",

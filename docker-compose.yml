@@ -37,4 +37,17 @@ services:
       REDIS_URL: db
       REDIS_PORT: 6379
       NODE_ENV: production
+  appvanilla:
+    build: .
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+    command: yarn start:vanilla
+    stdin_open: true
+    tty: true
+    environment:
+      REDIS_URL: db
+      REDIS_PORT: 6379
+      NODE_ENV: production
   

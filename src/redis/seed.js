@@ -9,6 +9,8 @@ import { setKey } from './client';
 
 (async () => {
   try {
+    console.log('Started processing file');
+
     const targetPath = path.resolve(__dirname, '../../', 'data/wordlist.txt');
 
     const rl = createInterface({

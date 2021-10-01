@@ -16,9 +16,13 @@
 
 > $ docker-compose run test
 
-5. Finally, after seeding (and optional testing), to run the prompt, do:
+5. Finally, after seeding (and optional testing), to run the prompt, there are two options, one based on React and one based on vanilla JS:
 
 > $ docker-compose run app
+
+or
+
+> $ docker-compose run appvanilla
 
 6. After running all examples, playing with it, etc, recommended:
 
